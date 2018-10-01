@@ -9,7 +9,7 @@ import android.widget.Toast
 import com.linhnv.mfvtest.R
 import com.linhnv.mfvtest.base.BaseActivity
 import com.linhnv.mfvtest.databinding.ActivityArticlesBinding
-import com.linhnv.mfvtest.model.Articles
+import com.linhnv.mfvtest.model.Article
 
 class ArticlesActivity : BaseActivity<ArticlesPresenter>(), ArticlesView {
 
@@ -36,7 +36,7 @@ class ArticlesActivity : BaseActivity<ArticlesPresenter>(), ArticlesView {
         presenter.onViewDestroyed()
     }
 
-    override fun updateArticles(articles: List<Articles.Article>) {
+    override fun updateArticles(articles: List<Article>) {
         articlesAdapter.updateArticles(articles)
     }
 

@@ -1,9 +1,8 @@
 package com.linhnv.mfvtest.network
 
-import com.linhnv.mfvtest.model.Articles
+import com.linhnv.mfvtest.model.ArticleResponse
 import io.reactivex.Observable
 import retrofit2.http.GET
-import java.util.*
 
 /**
  * Created by linhnv on 01/10/2018.
@@ -15,5 +14,5 @@ interface ArticlesApi {
 
 
     @GET("/example-feed/feed.json")
-    fun getArticles(): Observable<List<Articles.Article>>
+    fun getArticles(): Observable<ArticleResponse>
 }

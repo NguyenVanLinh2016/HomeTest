@@ -22,21 +22,18 @@ class ArticlesPresenter(articlesView: ArticlesView) : BasePresenter<ArticlesView
         loadArticles()
     }
 
-    fun loadArticles(){
+    private fun loadArticles() {
         view.showLoading()
         subscription = postApi
                 .getArticles()
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
                 .doOnTerminate { view.hideLoading() }
-                .subscribe(
-                        {
-                            articlesList -> view.updateArticles(articlesList)
-                        },
-                        {
-                            view.showError(R.string.unknown_error)
-                        }
-                )
+                .subscribe({
+                    view.updateArticles(it.articles)
+                }, {
+                    view.showError(R.string.unknown_error)
+                })
     }
 
     override fun onViewDestroyed() {

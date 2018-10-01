@@ -6,7 +6,7 @@
 
         <variable
             name="articles"
-            type="com.linhnv.mfvtest.model.Articles.Article" />
+            type="com.linhnv.mfvtest.model.Article" />
     </data>
 
     <android.support.v7.widget.CardView
